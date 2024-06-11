@@ -1,0 +1,28 @@
+restart
+
+#Wait out 100ns GSR (important for post-route timing simulation, but not for behavioral simulations)
+add_force input_a {0 0ns}
+add_force input_b {0 0ns}
+add_force carry_in {0 0ns}
+run 100ns
+
+add_force input_a {0 0ns}
+add_force input_b {0 0ns}
+add_force carry_in {0 0ns}
+run 20ns
+
+add_force input_a {0 0ns}
+add_force input_b {0 0ns}
+add_force carry_in {1 0ns}
+run 20ns
+
+add_force input_a {0 0ns}
+add_force input_b {1 0ns}
+add_force carry_in {0 0ns}
+run 20ns
+
+add_force input_a {0 0ns}
+add_force input_b {1 0ns}
+add_force carry_in {1 0ns}
+run 20ns
+
